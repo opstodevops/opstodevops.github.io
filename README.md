@@ -1,2 +1,2 @@
-# opstodevops.github.io
-A blog!
+# opstodevops.tech
+Code repository for opstodevops.tech blog
