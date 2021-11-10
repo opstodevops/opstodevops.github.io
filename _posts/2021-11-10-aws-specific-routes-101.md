@@ -2,6 +2,8 @@
 layout: post
 title:  "Amazon VPC More Specific Routing Demo"
 date:   2021-11-10
+author: prashant
+featured: true
 categories: [blog]
 tags: [aws, vpc, routing, subnet, cdk]
 excerpt_separator: <!--more-->
@@ -12,13 +14,6 @@ This video demonstration is based on [AWS blog](https://aws.amazon.com/blogs/aws
 The entire demonstration is done in AWS CloudShell. If you want to follow along then spin up a fresh session of AWS CloudShell in your account & start working.
 
 <!--more-->
-
-I will be using AWS SAM to deploy our structure.\
-Beware that there is no actual website involved & all the code does is create an order function (simulating an order) & when that function is invoked, it will trigger the invoice function based on AWS EventBridge rule.
-
-You can find the code on my [GitHub repo](https://github.com/opstodevops/eventbridge-sam-python-example)
-
-Let us clone the repository and have some fun with AWS EventBridge.
 
 ```bash{% raw %}
 nvm --version # most likely not installed in CloudShell
