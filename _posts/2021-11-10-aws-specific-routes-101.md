@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Event-driven architecture using AWS EventBridge Part 2"
-date:   2020-09-16
+title:  "Amazon VPC More Specific Routing Demo"
+date:   2021-11-10
 categories: [blog]
-tags: [aws, event-driven architecture, event driven, serverless, eventbridge, SAM]
+tags: [aws, vpc, routing, subnet, cdk]
 excerpt_separator: <!--more-->
 ---
 
