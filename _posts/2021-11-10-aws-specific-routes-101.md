@@ -37,6 +37,7 @@ cdk deploy
 cdk destroy # to clean up the resources
 ```{% endraw %}
 
+![Specific Routing](/assets/morespecific.gif){:class="img-responsive"}
 
 If you have followed so far, you will see bump in the wire, as in the packets being captured in appliance instance which could very well be your inspection/filtering rig.
 
