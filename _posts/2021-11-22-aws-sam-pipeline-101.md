@@ -11,7 +11,7 @@ excerpt_separator: <!--more-->
 
 Few months ago, AWS announced a new capability of [AWS Serverless Application Model](https://aws.amazon.com/serverless/sam/) called SAM Pipelines. I haven't had the chance to 
 play with it so far but that's going to change today. I like pipelines for obious reasons - mostly one time setup, accelerated release cycles, enhanced reliability, secure, 
-compliant, performant & whole lot of other benefits. 
+compliant, performant & whole lot of other benefits. \
 There are so many CI/CD systems available in the market, namely AWS Code Pipeline, Jenkins, Team City, Github actions, Circle CI, Spinnaker etc. Each comes with own set of features &
 complexity. What if I told you that AWS SAM Pipelines takes all the pain away & makes it easy to crate a secure continuous integration and continuous deployment (CI/CD) pipelines 
 for your preferred CI/CD system. Now at the time of writing, not all CI/CD systems are in the supported list but few of the popular ones are there for you to start working with. 
