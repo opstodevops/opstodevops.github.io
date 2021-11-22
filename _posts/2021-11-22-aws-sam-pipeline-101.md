@@ -9,30 +9,27 @@ tags: [aws, SAM, Github, pipeline, automation]
 excerpt_separator: <!--more-->
 ---
 
-Few months ago, AWS announced a new capability of [AWS Serverless Application Model](https://aws.amazon.com/serverless/sam/) called SAM Pipelines. I haven't had the chance to \
-play with it so far but that's going to change today. I like pipelines for obious reasons - mostly one time setup, accelerated release cycles, enhanced reliability, secure, \
+Few months ago, AWS announced a new capability of [AWS Serverless Application Model](https://aws.amazon.com/serverless/sam/) called SAM Pipelines. I haven't had the chance to 
+play with it so far but that's going to change today. I like pipelines for obious reasons - mostly one time setup, accelerated release cycles, enhanced reliability, secure, 
 compliant, performant & whole lot of other benefits. 
-There are so many CI/CD systems available in the market, namely AWS Code Pipeline, Jenkins, Team City, Github actions, Circle CI, Spinnaker etc. Each comes with own set of features &\
-complexity. What if I told you that AWS SAM Pipelines takes all the pain away & makes it easy to crate a secure continuous integration and continuous deployment (CI/CD) pipelines \
-for your preferred CI/CD system. Now at the time of writing, not all CI/CD systems are in the supported list but few of the popular ones are there for you to start working with. \
+There are so many CI/CD systems available in the market, namely AWS Code Pipeline, Jenkins, Team City, Github actions, Circle CI, Spinnaker etc. Each comes with own set of features &
+complexity. What if I told you that AWS SAM Pipelines takes all the pain away & makes it easy to crate a secure continuous integration and continuous deployment (CI/CD) pipelines 
+for your preferred CI/CD system. Now at the time of writing, not all CI/CD systems are in the supported list but few of the popular ones are there for you to start working with. 
 This blog post shows how to use AWS SAM Pipelines to create a CI/CD deployment pipeline that integrates with Github Actions.
+
+<!--more-->
 
 If you want to follow along then spin up a fresh Cloud 9 environment or start a session in your favorite IDE session.
 
 <B>PREREQUISITES</B>
 
 
-✅  An AWS account with permissions to create the necessary resources.
-✅  Install AWS Command Line Interface (CLI) and AWS SAM CLI (shown below 👇).
-✅  A verified Github account: This post assumes you have the required permissions to configure Github projects, create workflows, and configure Github variables.
-✅  Create a new Github project and clone it to your local environment
-
+✅  An AWS account with permissions to create the necessary resources. \
+✅  Install AWS Command Line Interface (CLI) and AWS SAM CLI (shown below 👇).  \
+✅  A verified Github account: This post assumes you have the required permissions to configure Github projects, create workflows, and configure Github variables. \
+✅  Create a new Github project and clone it to your local environment \
 
 ![sam cli download](/assets/sam-cli-dload.PNG)
-
-
-
-<!--more-->
 
 ```bash{% raw %}
 $ wget https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip
@@ -295,15 +292,16 @@ Successfully created the pipeline configuration file(s):
         - .github/workflows/pipeline.yaml
 ```{% endraw %}
 
-The important section to take note of before proceeding is Pipeline IAM user credential. Shown below is an example of what you need to make note of & configure github repository>Settings>Secrets.
+The important section to take note of before proceeding is Pipeline IAM user credential. Shown below is an example of what you need to make note of & configure 
+github `repository>Settings>Secrets`.
 
-![pipeline iam](/assets/pipeline-iam.PNG)
+![pipeline iam](/assets/pipeline-iam.png)
 
-![github secrets](/assets/github-secrets.PNG)
+![github secrets](/assets/github-secrets.png)
 
 What is left now is to commit the changes to your Github repository.
 
-![git push sam-app](/assets/git-sam-cli.PNG)
+![git push sam-app](/assets/git-sam-cli.png)
 
 Once the files are commited, you can click on Actions to see the pipeline in action.
 
