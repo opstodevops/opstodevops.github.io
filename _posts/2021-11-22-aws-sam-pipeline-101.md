@@ -27,9 +27,9 @@ If you want to follow along then spin up a fresh Cloud 9 environment or start a 
 ✅  An AWS account with permissions to create the necessary resources. \
 ✅  Install AWS Command Line Interface (CLI) and AWS SAM CLI (shown below 👇).  \
 ✅  A verified Github account: This post assumes you have the required permissions to configure Github projects, create workflows, and configure Github variables. \
-✅  Create a new Github project and clone it to your local environment \
+✅  Create a new Github project and clone it to your local environment 
 
-![sam cli download](/assets/sam-cli-dload.PNG)
+![sam cli download](/assets/sam-cli-dload.png)
 
 ```bash{% raw %}
 $ wget https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip
