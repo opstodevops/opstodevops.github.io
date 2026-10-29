@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Route support tickets only when the model is sure: Jev on AWS Lambda Web Functions"
-date:   2026-10-29
+date:   2026-04-15
 author: prashant
 categories: [blog]
 tags: [aws, lambda, jev, triage, machine-learning]
