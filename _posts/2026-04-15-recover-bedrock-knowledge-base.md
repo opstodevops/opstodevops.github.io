@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Recover an Amazon Bedrock knowledge base to a known-good point in time"
-date:   2026-01-15
+date:   2026-04-15
 author: prashant
 categories: [blog]
 tags: [aws, bedrock, knowledge-base, backup, step-functions]

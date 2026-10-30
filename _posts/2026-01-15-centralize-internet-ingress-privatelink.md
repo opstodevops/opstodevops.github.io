@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Centralize internet ingress for isolated workloads with AWS PrivateLink"
-date:   2026-07-15
+date:   2026-01-15
 author: prashant
 categories: [blog]
 tags: [aws, privatelink, networking, cloudfront, vpc]
