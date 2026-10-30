@@ -36,10 +36,10 @@ PS /pwsh> Get-STSCallerIdentity
 
 Account      Arn                                       UserId
 -------      ---                                       ------
-912345678908 arn:aws:iam::912345678908:user/opstodevops AKAWSACCESSKEY6L
+111122223333 arn:aws:iam::111122223333:user/opstodevops AKAWSACCESSKEY6L
 
 PS /pwsh> ./RUN-SampleWindowsEC2.ps1
-arn:aws:cloudformation:us-east-1:912345678908:stack/SampleWindowsStack/4b2d3ec0-9683-11ea-917c-0ea6b7109c22
+arn:aws:cloudformation:us-east-1:111122223333:stack/SampleWindowsStack/4b2d3ec0-9683-11ea-917c-0ea6b7109c22
 ```
 
 The script that I called above simply imports the module for AWS tools for PowerShell, configures the parameter value & run the Cloudformation template written in YAML.

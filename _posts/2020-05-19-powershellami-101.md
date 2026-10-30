@@ -32,7 +32,7 @@ PS /> Get-STSCallerIdentity
 
 Account      Arn                                       UserId
 -------      ---                                       ------
-912345678908 arn:aws:iam::912345678908:user/opstodevops AKAWSACCESSKEY6L
+111122223333 arn:aws:iam::111122223333:user/opstodevops AKAWSACCESSKEY6L
 ```
 
 This is the first command which returned a ton on screen so I refined it further.

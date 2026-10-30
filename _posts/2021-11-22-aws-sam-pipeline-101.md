@@ -46,8 +46,8 @@ $ sam --version
 
 ```bash{% raw %}
 $ git clone https://github.com/GITHUBACCOUNT/GITHUBREPO.git
-$ export AWS_ACCESS_KEY_ID=AKIK6TVV757ML6AV2DBD7
-$ export AWS_SECRET_ACCESS_KEY=WAE5Eo6fPJut1XQjXxzBemXlWLyTBEhOCmDkqkG8
+$ export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
+$ export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 $ sam init --runtime go1.x --app-template hello-world --name sam-app && sam pipeline init --bootstrap
 What package type would you like to use?
         1 - Zip (artifact is a zip uploaded to S3)
@@ -129,7 +129,7 @@ https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html
         2 - default (named profile)
         q - Quit and configure AWS credentials
 Select a credential source to associate with this stage: 1
-Associated account 399635643159 with configuration dev.
+Associated account 111122223333 with configuration dev.
 
 Enter the region in which you want these resources to be created [us-east-1]: us-west-2
 Enter the pipeline IAM user ARN if you have previously created one, or we will create one for you []: 
@@ -142,7 +142,7 @@ Does your application contain any IMAGE type Lambda functions? [y/N]: N
 
 [4] Summary
 Below is the summary of the answers:
-        1 - Account: 399635643159
+        1 - Account: 111122223333
         2 - Stage configuration name: dev
         3 - Region: us-west-2
         4 - Pipeline user: [to be created]
@@ -166,8 +166,8 @@ The following resources were created in your account:
         - CloudFormation execution role
         - Artifact bucket
 Pipeline IAM user credential:
-        AWS_ACCESS_KEY_ID: AAIKV2DBD7MDHHILQRE5
-        AWS_SECRET_ACCESS_KEY: M6sOFZQup7Ij5+m67LUR+lLNKAoycFqZM+2iL0SI
+        AWS_ACCESS_KEY_ID: AKIAIOSFODNN7EXAMPLE
+        AWS_SECRET_ACCESS_KEY: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 View the definition in .aws-sam/pipeline/pipelineconfig.toml,
 run sam pipeline bootstrap to generate another set of resources, or proceed to
 sam pipeline init to create your pipeline configuration file.
@@ -205,10 +205,10 @@ https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html
         2 - default (named profile)
         q - Quit and configure AWS credentials
 Select a credential source to associate with this stage: 1
-Associated account 399635643159 with configuration prod.
+Associated account 111122223333 with configuration prod.
 
 Enter the region in which you want these resources to be created [us-east-1]: 
-Pipeline IAM user ARN: arn:aws:iam::399635643159:user/aws-sam-cli-managed-dev-pipeline-reso-PipelineUser-17BVVAM1963CU
+Pipeline IAM user ARN: arn:aws:iam::111122223333:user/aws-sam-cli-managed-dev-pipeline-reso-PipelineUser-17BVVAM1963CU
 
 [3] Reference application build resources
 Enter the pipeline execution role ARN if you have previously created one, or we will create one for you []: 
@@ -218,10 +218,10 @@ Does your application contain any IMAGE type Lambda functions? [y/N]: N
 
 [4] Summary
 Below is the summary of the answers:
-        1 - Account: 399635643159
+        1 - Account: 111122223333
         2 - Stage configuration name: prod
         3 - Region: us-east-1
-        4 - Pipeline user ARN: arn:aws:iam::399635643159:user/aws-sam-cli-managed-dev-pipeline-reso-PipelineUser-17BVVAM1963CU
+        4 - Pipeline user ARN: arn:aws:iam::111122223333:user/aws-sam-cli-managed-dev-pipeline-reso-PipelineUser-17BVVAM1963CU
         5 - Pipeline execution role: [to be created]
         6 - CloudFormation execution role: [to be created]
         7 - Artifacts bucket: [to be created]
@@ -276,15 +276,15 @@ We will generate a pipeline config file based on the following information:
         What is the template file path?: sam-app/template.yaml
         Select an index or enter the stage 1's configuration name (as provided during the bootstrapping): dev
         What is the sam application stack name for stage 1?: sam-app-dev
-        What is the pipeline execution role ARN for stage 1?: arn:aws:iam::399635643159:role/aws-sam-cli-managed-dev-pipe-PipelineExecutionRole-1LV6QTCJB978X
-        What is the CloudFormation execution role ARN for stage 1?: arn:aws:iam::399635643159:role/aws-sam-cli-managed-dev-p-CloudFormationExecutionR-10BO3OVCCC5Q
+        What is the pipeline execution role ARN for stage 1?: arn:aws:iam::111122223333:role/aws-sam-cli-managed-dev-pipe-PipelineExecutionRole-1LV6QTCJB978X
+        What is the CloudFormation execution role ARN for stage 1?: arn:aws:iam::111122223333:role/aws-sam-cli-managed-dev-p-CloudFormationExecutionR-10BO3OVCCC5Q
         What is the S3 bucket name for artifacts for stage 1?: aws-sam-cli-managed-dev-pipeline-artifactsbucket-a38wt94ma2ha
         What is the ECR repository URI for stage 1?: 
         What is the AWS region for stage 1?: us-west-2
         Select an index or enter the stage 2's configuration name (as provided during the bootstrapping): prod
         What is the sam application stack name for stage 2?: sam-app-prod
-        What is the pipeline execution role ARN for stage 2?: arn:aws:iam::399635643159:role/aws-sam-cli-managed-prod-pip-PipelineExecutionRole-KV2T4HDCJLFX
-        What is the CloudFormation execution role ARN for stage 2?: arn:aws:iam::399635643159:role/aws-sam-cli-managed-prod-CloudFormationExecutionR-PN5P4852263R
+        What is the pipeline execution role ARN for stage 2?: arn:aws:iam::111122223333:role/aws-sam-cli-managed-prod-pip-PipelineExecutionRole-KV2T4HDCJLFX
+        What is the CloudFormation execution role ARN for stage 2?: arn:aws:iam::111122223333:role/aws-sam-cli-managed-prod-CloudFormationExecutionR-PN5P4852263R
         What is the S3 bucket name for artifacts for stage 2?: aws-sam-cli-managed-prod-pipeline-artifactsbucket-ed5pyo38bpbp
         What is the ECR repository URI for stage 2?: 
         What is the AWS region for stage 2?: us-east-1

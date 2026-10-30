@@ -49,18 +49,18 @@ Every AWS will have a default Event Bus but here I am creating a new one.
 ```bash{% raw %}
 OpsToDevOps $ aws events create-event-bus --name manual-order-bus
 {
-    "EventBusArn": "arn:aws:events:us-east-1:803943555226:event-bus/manual-order-bus"
+    "EventBusArn": "arn:aws:events:us-east-1:111122223333:event-bus/manual-order-bus"
 }
 OpsToDevOps $ aws events list-event-buses
 {
     "EventBuses": [
         {
             "Name": "default",
-            "Arn": "arn:aws:events:us-east-1:803943555226:event-bus/default"
+            "Arn": "arn:aws:events:us-east-1:111122223333:event-bus/default"
         },
         {
             "Name": "manual-order",
-            "Arn": "arn:aws:events:us-east-1:803943555226:event-bus/manual-order-bus"
+            "Arn": "arn:aws:events:us-east-1:111122223333:event-bus/manual-order-bus"
         }
     ]
 }
@@ -70,17 +70,17 @@ For routing incoming events, the Event Bus needs rules. Without the rules, Event
 Here I am creating a very simple `catch all` event rule.
 
 ```bash{% raw %}  
-OpsToDevOps $ aws events put-rule --name "manual-order-rule" --event-pattern "{\"account\":[\"803943555226\"]}" --state ENABLED --event-bus-name "manual-order-bus"           
+OpsToDevOps $ aws events put-rule --name "manual-order-rule" --event-pattern "{\"account\":[\"111122223333\"]}" --state ENABLED --event-bus-name "manual-order-bus"           
 {
-    "RuleArn": "arn:aws:events:us-east-1:803943555226:rule/manual-order-bus/manual-order-rule"
+    "RuleArn": "arn:aws:events:us-east-1:111122223333:rule/manual-order-bus/manual-order-rule"
 }
 OpsToDevOps $ aws events list-rules --event-bus-name manual-order
 {
     "Rules": [
         {
             "Name": "manual-order-rule",
-            "Arn": "arn:aws:events:us-east-1:803943555226:rule/manual-order-bus/manual-order-rule",
-            "EventPattern": "{\"account\":[\"803943555226\"]}",
+            "Arn": "arn:aws:events:us-east-1:111122223333:rule/manual-order-bus/manual-order-rule",
+            "EventPattern": "{\"account\":[\"111122223333\"]}",
             "State": "ENABLED",
             "EventBusName": "manual-order-bus"
         }
@@ -104,7 +104,7 @@ OpsToDevOps $ aws iam list-attached-role-policies --role-name myManualOrder-role
     "AttachedPolicies": [
         {
             "PolicyName": "AWSLambdaBasicExecutionRole-6af4c077-cafc-4890-884c-974e782ff00a",
-            "PolicyArn": "arn:aws:iam::803943555226:policy/service-role/AWSLambdaBasicExecutionRole-6af4c077-cafc-4890-884c-974e782ff00a"
+            "PolicyArn": "arn:aws:iam::111122223333:policy/service-role/AWSLambdaBasicExecutionRole-6af4c077-cafc-4890-884c-974e782ff00a"
         },
         {
             "PolicyName": "AmazonEventBridgeFullAccess",
@@ -164,12 +164,12 @@ Alright, here I am zipping the Python code and deploying it using that `IAM role
 ```bash{% raw %}
 OpsToDevOps $ zip -r manual_order.zip lambda_function.py                                                                                                                  
   adding: lambda_function.py (deflated 53%)
-OpsToDevOps $ aws lambda create-function --function-name "manual-order-function" --runtime "python3.6" --role arn:aws:iam::803943555226:role/service-role/myManualOrder-role-hcqiducd --handler "lambda_function.lambda_handler" --zip-file fileb://manual_order.zip                                                                                             
+OpsToDevOps $ aws lambda create-function --function-name "manual-order-function" --runtime "python3.6" --role arn:aws:iam::111122223333:role/service-role/myManualOrder-role-hcqiducd --handler "lambda_function.lambda_handler" --zip-file fileb://manual_order.zip                                                                                             
 {
     "FunctionName": "manual-order-function",
-    "FunctionArn": "arn:aws:lambda:us-east-1:803943555226:function:manual-order-function",
+    "FunctionArn": "arn:aws:lambda:us-east-1:111122223333:function:manual-order-function",
     "Runtime": "python3.6",
-    "Role": "arn:aws:iam::803943555226:role/service-role/myManualOrder-role-hcqiducd",
+    "Role": "arn:aws:iam::111122223333:role/service-role/myManualOrder-role-hcqiducd",
     "Handler": "lambda_function.lambda_handler",
     "CodeSize": 546,
     "Description": "",
@@ -190,9 +190,9 @@ OpsToDevOps $ aws lambda list-functions
     "Functions": [
         {
             "FunctionName": "manual-order-function",
-            "FunctionArn": "arn:aws:lambda:us-east-1:803943555226:function:manual-order-function",
+            "FunctionArn": "arn:aws:lambda:us-east-1:111122223333:function:manual-order-function",
             "Runtime": "python3.6",
-            "Role": "arn:aws:iam::803943555226:role/service-role/myManualOrder-role-hcqiducd",
+            "Role": "arn:aws:iam::111122223333:role/service-role/myManualOrder-role-hcqiducd",
             "Handler": "lambda_function.lambda_handler",
             "CodeSize": 546,
             "Description": "",
@@ -231,7 +231,7 @@ OpsToDevOps $ aws logs describe-log-streams --log-group-name /aws/events/manual-
             "lastEventTimestamp": 1597568951000,
             "lastIngestionTime": 1597568952258,
             "uploadSequenceToken": "49605671008691322765777015740483179716136754318630568082",
-            "arn": "arn:aws:logs:us-east-1:803943555226:log-group:/aws/events/manual-order-cw:log-stream:902b3e54-bfe0-3b64-8933-318bcded6ab1",
+            "arn": "arn:aws:logs:us-east-1:111122223333:log-group:/aws/events/manual-order-cw:log-stream:902b3e54-bfe0-3b64-8933-318bcded6ab1",
             "storedBytes": 0
         }
     ]
